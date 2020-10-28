@@ -24,8 +24,15 @@ const test3 = new LinkedList();
 test3.addToHead('📺');
 emojis.forEach(el => test3.addToTail(el))
 
+// This LL is empty
+const test4 = new LinkedList();
+
+// This LL has only one node
+const test5 = new LinkedList();
+test5.addToHead('z');
+
 describe('isLoop function', () => {
-	
+
 	// Feel free to write a few tests of your own! :)
 	it('returns true if linked list contains a loop', () =>{
 		expect(isLoop(test1)).to.equal(true);
@@ -34,5 +41,17 @@ describe('isLoop function', () => {
 
 	it('returns false if linked list contains no loop', () =>{
 		expect(isLoop(test3)).to.equal(false);
+		expect(isLoop(test4)).to.equal(false);
+		expect(isLoop(test5)).to.equal(false);
 	});
+
+	it('returns false if linked list contains is empty', () =>{
+		expect(isLoop(test4)).to.equal(false);
+	});
+
+	it('returns false if linked list contains only one node', () =>{
+		expect(isLoop(test5)).to.equal(false);
+	});
+
+
 });
